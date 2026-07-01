@@ -18,7 +18,7 @@ export const episodes = [
     duration: "0:00",
     description: "The deceptions just keep on coming.",
     theme: "blue",
-    emoji: "🎂",
+    emoji: "👻",
     audioFile: "ruth.mp3",
   },
   {
@@ -28,7 +28,7 @@ export const episodes = [
     duration: "0:00",
     description: "Who's the pettiest person that you know?",
     theme: "green",
-    emoji: "🌿",
+    emoji: "🔨",
     audioFile: "anjie.mp3",
   },
   {
@@ -38,7 +38,7 @@ export const episodes = [
     duration: "8:11",
     description: "This love triangle ends up in the last place you'd expect.",
     theme: "purple",
-    emoji: "💜",
+    emoji: "🏨",
     audioFile: "allison.mp3",
   },
   {
@@ -49,7 +49,7 @@ export const episodes = [
     description:
       "One person is not on the same page as everyone else at this bachelorette..",
     theme: "gold",
-    emoji: "✨",
+    emoji: "🍟",
     audioFile: "jenny.mp3",
   },
 ];

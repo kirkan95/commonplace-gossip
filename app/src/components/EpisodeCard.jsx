@@ -110,7 +110,15 @@ export default function EpisodeCard({ episode, audioUrl, isPlaying, onPlay }) {
             onClick={() => onPlay(isPlaying ? null : episode.id)}
             aria-label={isPlaying ? 'Pause' : 'Play'}
           >
-            {isPlaying ? '⏸' : '▶'}
+            {isPlaying ? (
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            )}
           </button>
           <button className={styles.skipBtn} onClick={() => skip(15)}>15s »</button>
           <span className={styles.time}>{fmt(currentTime)} / {fmt(duration) !== '0:00' ? fmt(duration) : episode.duration}</span>

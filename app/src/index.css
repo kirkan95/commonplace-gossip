@@ -7,6 +7,8 @@ body {
   font-family: 'Nunito', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #F0F7FF;
+  overflow-x: hidden;
 }
 
 #root {
