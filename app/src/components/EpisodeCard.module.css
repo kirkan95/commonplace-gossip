@@ -1,0 +1,133 @@
+.card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.top {
+  display: flex;
+  gap: 14px;
+  padding: 16px 16px 12px;
+  align-items: flex-start;
+}
+
+.art {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.number {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 900;
+  color: #0A1628;
+  line-height: 1.2;
+}
+
+.meta {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #5A7A9A;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.desc {
+  font-size: 13px;
+  color: #3A5070;
+  line-height: 1.55;
+  padding: 0 16px 14px;
+  font-style: italic;
+}
+
+.divider {
+  height: 1px;
+  background: #E8F0FF;
+  margin: 0 16px;
+}
+
+.player {
+  padding: 12px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progressWrap {
+  width: 100%;
+  height: 4px;
+  background: #E0EAFF;
+  border-radius: 99px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.1s linear;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 99px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s, transform 0.1s;
+  flex-shrink: 0;
+}
+
+.playBtn:hover { opacity: 0.85; }
+.playBtn:active { transform: scale(0.93); }
+
+.skipBtn {
+  background: none;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #5A7A9A;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  padding: 4px;
+}
+
+.skipBtn:hover { color: #1A5FFF; }
+
+.time {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #5A7A9A;
+}

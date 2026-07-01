@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', system-ui, sans-serif;
+    background: #0A1628;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  .phone {
+    width: 390px;
+    background: #F0F7FF;
+    border-radius: 48px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    background: #1A5FFF;
+    padding: 52px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-blob { position: absolute; border-radius: 50%; opacity: 0.15; pointer-events: none; }
+  .hb1 { width: 180px; height: 180px; background: #00A870; top: -60px; right: -40px; }
+  .hb2 { width: 100px; height: 100px; background: #6B5AFF; bottom: -30px; left: 20px; }
+
+  .header-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #B8F0DC; position: relative; z-index: 1; }
+  .header-title { font-size: 30px; font-weight: 900; color: white; line-height: 1.0; letter-spacing: -0.5px; position: relative; z-index: 1; }
+  .header-subtitle { font-size: 11px; font-weight: 700; color: #C8DFFF; letter-spacing: 0.1em; text-transform: uppercase; position: relative; z-index: 1; margin-top: 2px; }
+
+  .episode-list { padding: 20px 20px 40px; display: flex; flex-direction: column; gap: 14px; }
+  .section-label { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A9A; margin-bottom: 4px; padding: 0 4px; }
+
+  .ep-card { border-radius: 20px; overflow: hidden; background: white; }
+  .ep-card-top { display: flex; gap: 14px; padding: 16px 16px 12px; align-items: flex-start; }
+  .ep-art { width: 72px; height: 72px; border-radius: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+  .ep-info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .ep-number { font-family: 'Courier New', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+  .ep-title { font-size: 15px; font-weight: 900; color: #0A1628; line-height: 1.2; }
+  .ep-meta { font-family: 'Courier New', monospace; font-size: 10px; color: #5A7A9A; letter-spacing: 0.05em; }
+  .ep-desc { font-size: 13px; color: #3A5070; line-height: 1.55; padding: 0 16px 14px; font-style: italic; }
+
+  .ep-player { padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .progress-bar-wrap { width: 100%; height: 4px; background: #E0EAFF; border-radius: 99px; overflow: hidden; cursor: pointer; }
+  .progress-bar-fill { height: 100%; border-radius: 99px; background: #00A870; }
+
+  .player-controls { display: flex; align-items: center; justify-content: space-between; }
+  .time-label { font-family: 'Courier New', monospace; font-size: 10px; color: #5A7A9A; }
+  .play-btn { width: 44px; height: 44px; border-radius: 99px; border: none; color: white; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity 0.15s, transform 0.1s; }
+  .play-btn:active { transform: scale(0.93); }
+  .skip-btn { background: none; border: none; font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; color: #5A7A9A; cursor: pointer; letter-spacing: 0.05em; padding: 4px; }
+
+  .theme-blue .ep-art { background: #D0EAFF; }
+  .theme-blue .ep-number { color: #1A5FFF; }
+  .theme-blue .play-btn { background: #1A5FFF; }
+
+  .theme-green .ep-art { background: #B8F0DC; }
+  .theme-green .ep-number { color: #00A870; }
+  .theme-green .play-btn { background: #00A870; }
+
+  .theme-purple .ep-art { background: #E0DBFF; }
+  .theme-purple .ep-number { color: #6B5AFF; }
+  .theme-purple .play-btn { background: #6B5AFF; }
+
+  .theme-gold .ep-art { background: #FFF3C0; }
+  .theme-gold .ep-number { color: #C49000; }
+  .theme-gold .play-btn { background: #F5B800; }
+  .theme-gold .progress-bar-fill { background: #F5B800; }
+
+  .divider-line { height: 1px; background: #E8F0FF; margin: 0 16px; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="header">
+    <div class="header-blob hb1"></div>
+    <div class="header-blob hb2"></div>
+    <div class="header-eyebrow">A Defector Defection</div>
+    <div class="header-title">Commonplace<br>Gossip</div>
+    <div class="header-subtitle">A Very Special Birthday Edition</div>
+  </div>
+
+  <div class="episode-list">
+    <div class="section-label">4 Episodes</div>
+
+    <div class="ep-card theme-blue">
+      <div class="ep-card-top">
+        <div class="ep-art">🎂</div>
+        <div class="ep-info">
+          <div class="ep-number">Episode 01</div>
+          <div class="ep-title">The Incident at the Bachelorette Party</div>
+          <div class="ep-meta">22 MIN · STORY 1 OF 4</div>
+        </div>
+      </div>
+      <div class="ep-desc">You won't believe what happened. Or maybe you will. Either way, someone made a choice.</div>
+      <div class="divider-line"></div>
+      <div class="ep-player">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+        <div class="player-controls">
+          <span class="skip-btn">« 15s</span>
+          <button class="play-btn" onclick="togglePlay(this)">▶</button>
+          <span class="skip-btn">15s »</span>
+          <span class="time-label">0:00 / 22:14</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ep-card theme-green">
+      <div class="ep-card-top">
+        <div class="ep-art">🌿</div>
+        <div class="ep-info">
+          <div class="ep-number">Episode 02</div>
+          <div class="ep-title">The Group Chat</div>
+          <div class="ep-meta">18 MIN · STORY 2 OF 4</div>
+        </div>
+      </div>
+      <div class="ep-desc">A screenshot was taken. A screenshot was shared. Nothing was ever the same.</div>
+      <div class="divider-line"></div>
+      <div class="ep-player">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+        <div class="player-controls">
+          <span class="skip-btn">« 15s</span>
+          <button class="play-btn" onclick="togglePlay(this)">▶</button>
+          <span class="skip-btn">15s »</span>
+          <span class="time-label">0:00 / 18:02</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ep-card theme-purple">
+      <div class="ep-card-top">
+        <div class="ep-art">💜</div>
+        <div class="ep-info">
+          <div class="ep-number">Episode 03</div>
+          <div class="ep-title">The Coworker's Sister's Ex</div>
+          <div class="ep-meta">29 MIN · STORY 3 OF 4</div>
+        </div>
+      </div>
+      <div class="ep-desc">This one has layers. Several layers. More layers than anyone expected.</div>
+      <div class="divider-line"></div>
+      <div class="ep-player">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+        <div class="player-controls">
+          <span class="skip-btn">« 15s</span>
+          <button class="play-btn" onclick="togglePlay(this)">▶</button>
+          <span class="skip-btn">15s »</span>
+          <span class="time-label">0:00 / 29:47</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ep-card theme-gold">
+      <div class="ep-card-top">
+        <div class="ep-art">✨</div>
+        <div class="ep-info">
+          <div class="ep-number">Episode 04</div>
+          <div class="ep-title">Something You Said at Brunch in 2019</div>
+          <div class="ep-meta">11 MIN · STORY 4 OF 4</div>
+        </div>
+      </div>
+      <div class="ep-desc">We have not forgotten. Neither has the person who submitted this.</div>
+      <div class="divider-line"></div>
+      <div class="ep-player">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+        <div class="player-controls">
+          <span class="skip-btn">« 15s</span>
+          <button class="play-btn" onclick="togglePlay(this)">▶</button>
+          <span class="skip-btn">15s »</span>
+          <span class="time-label">0:00 / 11:33</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePlay(btn) {
+    btn.textContent = btn.textContent === '▶' ? '⏸' : '▶';
+  }
+</script>
+</body>
+</html>

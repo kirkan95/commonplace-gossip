@@ -1,0 +1,83 @@
+.page {
+  min-height: 100dvh;
+  background: #F0F7FF;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: #1A5FFF;
+  padding: 52px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hblob1, .hblob2 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.hblob1 { width: 180px; height: 180px; background: #00A870; top: -60px; right: -40px; }
+.hblob2 { width: 100px; height: 100px; background: #6B5AFF; bottom: -30px; left: 20px; }
+
+.eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #B8F0DC;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  line-height: 1.0;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: #C8DFFF;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  margin-top: 2px;
+}
+
+.list {
+  padding: 20px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sectionLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #5A7A9A;
+  margin-bottom: 4px;
+  padding: 0 4px;
+}
+
+.statusMsg {
+  font-size: 14px;
+  color: #5A7A9A;
+  text-align: center;
+  padding: 32px 0;
+  font-style: italic;
+}

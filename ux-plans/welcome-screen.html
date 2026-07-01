@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', system-ui, sans-serif;
+    background: #0A1628;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  .phone {
+    width: 390px;
+    min-height: 844px;
+    background: #C8DFFF;
+    border-radius: 48px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 64px 32px 56px;
+    position: relative;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  }
+
+  .blob { position: absolute; border-radius: 50%; opacity: 0.22; pointer-events: none; }
+  .blob-1 { width: 280px; height: 280px; background: #1A5FFF; top: -100px; right: -90px; }
+  .blob-2 { width: 220px; height: 220px; background: #00A870; bottom: -70px; left: -70px; }
+  .blob-3 { width: 130px; height: 130px; background: #6B5AFF; bottom: 140px; right: -40px; }
+
+  .top-section {
+    position: relative; z-index: 1; width: 100%;
+    text-align: center; display: flex; flex-direction: column; align-items: center;
+  }
+
+  .eyebrow {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #1A5FFF; margin-bottom: 20px;
+  }
+
+  .headline {
+    font-size: 42px; font-weight: 900; color: #0A1628;
+    line-height: 1.0; letter-spacing: -1px; margin-bottom: 10px;
+  }
+  .headline span { color: #1A5FFF; }
+
+  .subtitle {
+    font-size: 12px; font-weight: 700; color: #6B5AFF;
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 32px;
+  }
+
+  .divider { width: 36px; height: 3px; background: #00A870; border-radius: 99px; margin-bottom: 28px; }
+
+  .body-copy { font-size: 15px; font-weight: 400; color: #0A1628; line-height: 1.7; max-width: 300px; }
+
+  .bottom-section {
+    position: relative; z-index: 1; width: 100%;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+
+  .password-field {
+    width: 100%; padding: 16px 22px; border-radius: 99px;
+    border: 2.5px solid #1A5FFF; background: white;
+    font-family: 'Nunito', system-ui, sans-serif;
+    font-size: 15px; font-weight: 600; color: #0A1628;
+    outline: none; text-align: center; transition: border-color 0.2s; min-height: 52px;
+  }
+  .password-field::placeholder { color: #A0BACC; font-weight: 400; font-style: italic; }
+  .password-field:focus { border-color: #6B5AFF; }
+
+  .submit-btn {
+    width: 100%; padding: 16px 22px; border-radius: 99px; border: none;
+    background: #1A5FFF; color: white;
+    font-family: 'Nunito', system-ui, sans-serif;
+    font-size: 16px; font-weight: 900; cursor: pointer;
+    letter-spacing: 0.03em; transition: background 0.2s, transform 0.1s; min-height: 52px;
+  }
+  .submit-btn:hover { background: #0A4FE0; }
+  .submit-btn:active { transform: scale(0.97); }
+
+  .error-msg {
+    font-size: 13px; font-weight: 700; color: #D4380D;
+    opacity: 0; transition: opacity 0.2s; min-height: 20px; text-align: center;
+  }
+  .error-msg.visible { opacity: 1; }
+
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+  }
+  .shake { animation: shake 0.4s ease; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="top-section">
+    <div class="eyebrow">A Defector Defection</div>
+    <div class="headline">Commonplace<br><span>Gossip</span></div>
+    <div class="subtitle">A Very Special Birthday Edition</div>
+    <div class="divider"></div>
+    <div class="body-copy">
+      A bunch of your closest friends submitted their pettiest and lowest-stakes stories you've ever heard, with the shared goal of giving you a nice birthday laugh. Enjoy!
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <input class="password-field" id="pw" type="password" placeholder="enter the password..." />
+    <button class="submit-btn" onclick="trySubmit()">Let me in</button>
+    <div class="error-msg" id="err">Incorrect password — try again.</div>
+  </div>
+</div>
+
+<script>
+  function trySubmit() {
+    const pw = document.getElementById('pw');
+    if (pw.value === '') { triggerError(); return; }
+    document.getElementById('err').classList.remove('visible');
+  }
+
+  function triggerError() {
+    const pw = document.getElementById('pw');
+    const err = document.getElementById('err');
+    err.classList.add('visible');
+    pw.classList.remove('shake');
+    void pw.offsetWidth;
+    pw.classList.add('shake');
+  }
+</script>
+</body>
+</html>

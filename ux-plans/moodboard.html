@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', system-ui, sans-serif; background: #F0F7FF; color: #0A1628; padding: 32px; }
+
+  .board-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A9A; margin-bottom: 32px; font-weight: 700; }
+
+  section { margin-bottom: 44px; }
+  section h3 { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #5A7A9A; margin-bottom: 18px; padding-bottom: 6px; border-bottom: 2px solid #C8DFFF; font-weight: 700; }
+
+  .palette { display: flex; gap: 14px; flex-wrap: wrap; }
+  .swatch { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .swatch-block { width: 76px; height: 76px; border-radius: 16px; }
+  .swatch-label { font-size: 10px; color: #5A7A9A; font-family: 'Courier New', monospace; text-align: center; }
+  .swatch-name { font-size: 11px; color: #0A1628; text-align: center; font-weight: 700; }
+
+  .type-samples { display: flex; flex-direction: column; gap: 14px; }
+  .type-sample { padding: 18px 22px; border-radius: 16px; }
+  .type-label { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: #5A7A9A; margin-bottom: 10px; font-weight: 700; }
+  .type-demo-display { font-family: 'Nunito', system-ui, sans-serif; font-size: 36px; font-weight: 900; color: #1A5FFF; letter-spacing: -1px; line-height: 1; }
+  .type-demo-body { font-family: 'Nunito', system-ui, sans-serif; font-size: 15px; line-height: 1.7; color: #0A1628; }
+  .type-demo-meta { font-family: 'Courier New', monospace; font-size: 11px; color: #00A870; letter-spacing: 0.1em; font-weight: bold; }
+
+  .taglines { display: flex; flex-direction: column; gap: 10px; }
+  .tagline-card { padding: 16px 20px; border-radius: 16px; }
+  .tagline-tag { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; font-weight: 700; }
+  .tagline-text { font-size: 15px; line-height: 1.5; font-style: italic; font-weight: 600; color: #0A1628; }
+
+  .episode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .episode-card { border-radius: 16px; padding: 16px 18px; }
+  .ep-style { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+  .ep-title { font-size: 14px; font-style: italic; line-height: 1.4; font-weight: 700; color: #0A1628; }
+
+  .tone-words { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tone-pill { padding: 8px 18px; border-radius: 100px; font-size: 13px; font-weight: 700; }
+
+  .ui-directions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .ui-card { flex: 1; min-width: 190px; border-radius: 16px; padding: 18px; }
+  .ui-card-title { font-size: 13px; font-weight: 900; margin-bottom: 8px; }
+  .ui-card-body { font-size: 12px; line-height: 1.65; }
+
+  .note { font-size: 11px; color: #5A7A9A; font-style: italic; margin-top: 12px; }
+</style>
+</head>
+<body>
+
+<div class="board-title">Normal Gossip — Special Edition / Moodboard v3 (Final)</div>
+
+<section>
+  <h3>Color Palette — Cool Family + One Warm Bridge</h3>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-block" style="background:#1A5FFF;"></div>
+      <div class="swatch-name">Electric Blue</div>
+      <div class="swatch-label">#1A5FFF</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#00A870;"></div>
+      <div class="swatch-name">Gossip Green</div>
+      <div class="swatch-label">#00A870</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#6B5AFF;"></div>
+      <div class="swatch-name">Periwinkle</div>
+      <div class="swatch-label">#6B5AFF</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#F5B800;"></div>
+      <div class="swatch-name">Honey Gold</div>
+      <div class="swatch-label">#F5B800</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#C8DFFF;"></div>
+      <div class="swatch-name">Sky Tint</div>
+      <div class="swatch-label">#C8DFFF</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#B8F0DC;"></div>
+      <div class="swatch-name">Mint Tint</div>
+      <div class="swatch-label">#B8F0DC</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#E0DBFF;"></div>
+      <div class="swatch-name">Lavender Tint</div>
+      <div class="swatch-label">#E0DBFF</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#0A1628; border: 1px solid #C8DFFF;"></div>
+      <div class="swatch-name">Midnight</div>
+      <div class="swatch-label">#0A1628</div>
+    </div>
+  </div>
+  <p class="note">Pink dropped entirely. Honey Gold is the single warm accent. Periwinkle stays in the cool zone between blue and purple.</p>
+</section>
+
+<section>
+  <h3>Typography — Nunito Black / Regular</h3>
+  <div class="type-samples">
+    <div class="type-sample" style="background:#C8DFFF;">
+      <div class="type-label">Display / Wordmark — Black Weight</div>
+      <div class="type-demo-display">Normal Gossip</div>
+    </div>
+    <div class="type-sample" style="background:white;">
+      <div class="type-label">Body — Regular Weight</div>
+      <div class="type-demo-body">Juicy, strange, funny, and utterly banal gossip about people you'll never know and never meet — but somehow, it's impossible to look away.</div>
+    </div>
+    <div class="type-sample" style="background:#B8F0DC;">
+      <div class="type-label">Meta / Episode Info — Monospace Accent</div>
+      <div class="type-demo-meta">EPISODE 01 · 24 MIN · SUBMITTED BY A FRIEND</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Taglines</h3>
+  <div class="taglines">
+    <div class="tagline-card" style="background:#1A5FFF;">
+      <div class="tagline-tag" style="color:#B8F0DC;">Official</div>
+      <div class="tagline-text" style="color:white;">"Juicy, strange, funny, and utterly banal gossip about people you'll never know and never meet."</div>
+    </div>
+    <div class="tagline-card" style="background:#EFF5FF;">
+      <div class="tagline-tag" style="color:#1A5FFF;">Option A — Personal</div>
+      <div class="tagline-text">"A very special edition — submitted by the people who love you most."</div>
+    </div>
+    <div class="tagline-card" style="background:#E8FBF4;">
+      <div class="tagline-tag" style="color:#00A870;">Option B — In-Character</div>
+      <div class="tagline-text">"We've been hearing things. And we think you deserve to know."</div>
+    </div>
+    <div class="tagline-card" style="background:#EEEAFF;">
+      <div class="tagline-tag" style="color:#6B5AFF;">Option C — Conspiratorial</div>
+      <div class="tagline-text">"These stories are true. The names have been changed. The gossip has not."</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Episode Title Style</h3>
+  <div class="episode-grid">
+    <div class="episode-card" style="background:#C8DFFF;">
+      <div class="ep-style" style="color:#1A5FFF;">Vague &amp; Intriguing</div>
+      <div class="ep-title">"The Incident at the Bachelorette Party"</div>
+    </div>
+    <div class="episode-card" style="background:#B8F0DC;">
+      <div class="ep-style" style="color:#00A870;">The Relationship</div>
+      <div class="ep-title">"The Coworker's Sister's Ex"</div>
+    </div>
+    <div class="episode-card" style="background:#E0DBFF;">
+      <div class="ep-style" style="color:#6B5AFF;">Simple &amp; Dramatic</div>
+      <div class="ep-title">"The Group Chat"</div>
+    </div>
+    <div class="episode-card" style="background:#FFF3C0;">
+      <div class="ep-style" style="color:#C49000;">Banal But Compelling</div>
+      <div class="ep-title">"Something You Said at Brunch in 2019"</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Tone &amp; Mood</h3>
+  <div class="tone-words">
+    <span class="tone-pill" style="background:#C8DFFF; color:#1A5FFF;">conspiratorial</span>
+    <span class="tone-pill" style="background:#1A5FFF; color:white;">warm</span>
+    <span class="tone-pill" style="background:#E0DBFF; color:#6B5AFF;">delightfully petty</span>
+    <span class="tone-pill" style="background:#B8F0DC; color:#00A870;">cozy</span>
+    <span class="tone-pill" style="background:#0A1628; color:#B8F0DC;">can't look away</span>
+    <span class="tone-pill" style="background:#EEEAFF; color:#6B5AFF;">intimate</span>
+    <span class="tone-pill" style="background:#00A870; color:white;">playful</span>
+    <span class="tone-pill" style="background:#FFF3C0; color:#C49000;">second-hand drama</span>
+    <span class="tone-pill" style="background:#0A1628; color:#F5B800;">utterly banal</span>
+    <span class="tone-pill" style="background:#C8DFFF; color:#1A5FFF;">we're all on a team</span>
+  </div>
+</section>
+
+<section>
+  <h3>UI Direction Notes</h3>
+  <div class="ui-directions">
+    <div class="ui-card" style="background:#C8DFFF;">
+      <div class="ui-card-title" style="color:#1A5FFF;">Welcome Screen</div>
+      <div class="ui-card-body" style="color:#0A1628;">Sky blue background. Bold wordmark in Electric Blue. One punchy tagline. Password field minimal — almost like a secret knock.</div>
+    </div>
+    <div class="ui-card" style="background:#B8F0DC;">
+      <div class="ui-card-title" style="color:#00A870;">Main Page</div>
+      <div class="ui-card-body" style="color:#0A1628;">Off-white or light blue background. Episode cards alternate between sky, mint, and lavender tints. Gold used sparingly as a highlight.</div>
+    </div>
+    <div class="ui-card" style="background:#E0DBFF;">
+      <div class="ui-card-title" style="color:#6B5AFF;">Episode Player</div>
+      <div class="ui-card-body" style="color:#0A1628;">Inline player per card. Green progress bar. Rounded play button in Electric Blue. Easy one-handed use on mobile.</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
